@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 
@@ -22,13 +23,13 @@ public class playermove : MonoBehaviour
     {
         if (rb2 != null)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 rb2.velocity = new Vector2(-5, rb2.velocity.y);
                 sp.flipX = true;
             }
            
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 rb2.velocity = new Vector2(5, rb2.velocity.y);
                 sp.flipX = false;
@@ -48,9 +49,11 @@ public class playermove : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "goal")
+
+        if (collision.gameObject.tag == "Goal")
         {
-           
+            print("rescenes");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
        
     }
