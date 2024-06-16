@@ -27,7 +27,10 @@ public class playermove : MonoBehaviour
             {
                 rb2.velocity = new Vector2(-5, rb2.velocity.y);
                 sp.flipX = true;
+                
             }
+            
+                
            
             if (Input.GetKey(KeyCode.RightArrow))
             {
@@ -37,7 +40,7 @@ public class playermove : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                rb2.velocity = new Vector2(rb2.velocity.x, 5);
+                rb2.velocity = new Vector2(rb2.velocity.x, 20);
             }
            
             if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -55,6 +58,14 @@ public class playermove : MonoBehaviour
             print("rescenes");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-       
     }
+    /*private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "trigger")
+        {
+            print("trigger on");
+           
+        }
+    }*/
+     
 }
