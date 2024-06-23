@@ -11,7 +11,7 @@ public class 平面拖動 : MonoBehaviour
 
     void OnMouseDown()
     {
-        offset = transform.position - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x * -15, Input.mousePosition.y * -15, transform.position.z));
+        offset = transform.position - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x * 1, Input.mousePosition.y * 1, transform.position.z));
         isDragging = true;
     }
 
@@ -24,8 +24,9 @@ public class 平面拖動 : MonoBehaviour
     {
         if (isDragging)
         {
-            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x*-15, Input.mousePosition.y*-15, transform.position.z);
+            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x*1, Input.mousePosition.y*1, transform.position.z);
             Vector3 curPosition = cam.ScreenToWorldPoint(curScreenPoint) + offset;
+            curPosition.z = 0;
             transform.position = curPosition;
         }
     }

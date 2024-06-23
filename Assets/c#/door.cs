@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class door : MonoBehaviour
 {
+    
     public GameObject doorshow;
     // Start is called before the first frame update
     void Start()

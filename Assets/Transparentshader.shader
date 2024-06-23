@@ -1,4 +1,4 @@
-Shader "Custom/Transparentshade"
+Shader "Custom/Transparentshader"
 {
     Properties
     {
@@ -7,7 +7,7 @@ Shader "Custom/Transparentshade"
     }
     SubShader
     {
-        Tags {"Queue"="Transparent" }
+        Tags {"Queue"="Transparent"}
         LOD 200
         Blend SrcAlpha OneMinusSrcAlpha
 
